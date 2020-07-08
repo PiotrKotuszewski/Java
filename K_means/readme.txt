@@ -1,0 +1,1 @@
+Implementacja algorytmu k-means.

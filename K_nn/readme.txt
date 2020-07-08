@@ -1,0 +1,1 @@
+Program ma dokonać klasyfikacji k-NN wszystkich obserwacji z pliku test-set na podstawie pliku train-set oraz podać dokladność (accuracy) tej klasyfikac
