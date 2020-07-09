@@ -11,10 +11,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String [] args){
-        //abstractClass();
+        abstractClass();
         //overlapping();
         //multiInheritance();
-        multiAscept();
+        //multiAscept();
         //dynamic();
     }
 
