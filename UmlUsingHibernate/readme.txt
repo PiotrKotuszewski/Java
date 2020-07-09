@@ -1,0 +1,1 @@
+Model relacyjny, asocjacje, dziedziczenie przy uzyciu Hibernate i w bazie MySQL.

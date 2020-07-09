@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="MySQL - mas_project@localhost" uuid="fd50d115-b311-46f3-9d66-d5c3ff11ee34">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/mas_project</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="Europe/Warsaw" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>
