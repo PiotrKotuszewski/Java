@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="SpringJDBC">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../biblioteki/SpringJDBC/spring-beans-5.0.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../biblioteki/SpringJDBC/spring-core-5.0.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../biblioteki/SpringJDBC/spring-jcl-5.0.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../biblioteki/SpringJDBC/spring-jdbc-5.0.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../biblioteki/SpringJDBC/spring-tx-5.0.8.RELEASE.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../biblioteki/SpringJDBC" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../biblioteki/SpringJDBC" recursive="false" />
+  </library>
+</component>

@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Weekop1:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Weekop1_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Weekop1/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Weekop1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="SpringJDBC" />
+          <element id="library" level="project" name="taglibs-standard-impl-1.2.5" />
+          <element id="library" level="project" name="taglibs-standard-spec-1.2.5" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.17" />
+          <element id="library" level="project" name="commons-logging-1.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
