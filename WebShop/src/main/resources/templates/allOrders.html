@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>All results</title>
+</head>
+<body>
+<div th:if="not ${allOrders.isEmpty()}">
+    <h1>All orders :</h1>
+    <table border="1">
+        <tr>
+            <th>Delivery Type</th>
+            <th>Post Date</th>
+            <th>User</th>
+            <th>Products</th>
+        </tr>
+        <tr th:each="singleUser: ${allOrders}" th:object="${singleOrder}">
+            <td th:text="*{deliveryType}">John</td>
+            <td th:text="*{postDate}">Kowalski</td>
+            <td th:text="*{user}">Kowalski</td>
+            <td th:text="*{shoppingCart}">Kowalski</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

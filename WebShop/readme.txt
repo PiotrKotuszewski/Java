@@ -1,0 +1,3 @@
+Sklep internetowy z wykorzystaniem Spring MVC, Spring Data, Thymeleaf, Spring Security, Spring Validation, HTML, CSS.
+
+W trakcie pisania...

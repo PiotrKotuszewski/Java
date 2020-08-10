@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Order adding</title>
+</head>
+<body>
+<h1>Order form</h1>
+<form action="#" method="post" th:action="@{/order/save}" th:object="${order}">
+    <p>Delivery Type: <input type="text" th:field="*{deliveryType}" /></p>
+    <p>Address: <input type="text" th:field="*{address}" /></p>
+    <p>First name: <input type="text" th:field="*{firstName}" /></p>
+    <p>Last name: <input type="text" th:field="*{lastName}" /></p>
+    <input type="submit" value="Save" />
+</form>
+<a th:href="@{/order/show}">Show all times</a>
+<a th:href="@{/}">Home</a>
+</body>
+</html>

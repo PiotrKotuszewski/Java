@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>All results</title>
+</head>
+<body>
+<div>
+    <h1>All registered times:</h1>
+    <table border="1">
+        <tr>
+            <th>User</th>
+            <th>Product List</th>
+        </tr>
+        <form action="#" method="post" th:action="@{/shoppingCart/save}" th:object="${shoppingCart}">
+        <tr th:each="singleUser: ${shoppingCart}" th:object="${shoppingCart}">
+            <td th:text="*{user}">John</td>
+            <td th:text="*{productList}">Kowalski</td>
+        </tr>
+            <input type="submit" value="Save" />
+        </form>
+    </table>
+</div>
+</body>
+</html>
