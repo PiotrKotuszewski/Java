@@ -2,6 +2,7 @@ package main.shop.Model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "product")
@@ -21,6 +22,9 @@ public class Product implements Serializable {
     private int availableCount;
     @OneToOne
     private Details details;
+
+    @OneToMany(mappedBy = "product")
+    private List<ImageModel> imageModelList;
 
     public Product(){}
 
@@ -77,6 +81,14 @@ public class Product implements Serializable {
 
     public void setAvailableCount(int availableCount) {
         this.availableCount = availableCount;
+    }
+
+    public List<ImageModel> getImageModelList() {
+        return imageModelList;
+    }
+
+    public void setImageModelList(List<ImageModel> imageModelList) {
+        this.imageModelList = imageModelList;
     }
 
     @Override

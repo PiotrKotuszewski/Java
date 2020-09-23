@@ -33,16 +33,4 @@ public class HomeController {
         return "order";
     }
 
-    @GetMapping("/products")
-    public String productList(Model model){
-        List<Product> products = new ArrayList<>();
-        products.add(new Product("Koszulka", "fajna", 500f, 5));
-        products.add(new Product("Spodenki", "fajna", 50f, 5));
-        products.add(new Product("Majtki", "fajna", 5f, 5));
-        products.forEach(productRepository::save);
-        List<Product> allProducts = (List<Product>) productRepository.findAll();
-        model.addAttribute("allProducts", allProducts);
-        return "productsList";
-    }
-
 }

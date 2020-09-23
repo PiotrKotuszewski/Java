@@ -2,6 +2,7 @@ package main.shop.Controller;
 
 import main.shop.Model.Product;
 import main.shop.Repository.ProductRepository;
+import main.shop.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +18,11 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
-    private ProductRepository productRepository;
-    private List<Product> productList = new ArrayList<>();
+    private ProductService productService;
 
     @Autowired
-    public ProductController(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
     }
 
     public String home(Model model){
@@ -34,5 +34,11 @@ public class ProductController {
     public String addProduct(@ModelAttribute Product product){
 
         return "redirect:/";
+    }
+
+    @GetMapping("/products")
+    public String productList(Model model){
+        model.addAttribute("allProducts", productService.showAllProducts());
+        return "productsList";
     }
 }

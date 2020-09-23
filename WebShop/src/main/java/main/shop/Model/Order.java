@@ -23,16 +23,20 @@ public class Order implements Serializable {
     private String firstName;
     @Column(name = "recipient_last_name", nullable = false)
     private String lastName;
+
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "id_user")
     private User user;
+
     @OneToOne
     private ShoppingCart shoppingCart;
 
     public Order(){}
 
-    public Order(String deliveryType, String address, String firstName, String lastName) {
+    public Order(String deliveryType, float orderSum, String postDate, String address, String firstName, String lastName) {
         this.deliveryType = deliveryType;
+        this.orderSum = orderSum;
+        this.postDate = postDate;
         this.address = address;
         this.firstName = firstName;
         this.lastName = lastName;

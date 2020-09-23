@@ -1,9 +1,5 @@
 package main.shop.Model;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
-import org.springframework.web.context.WebApplicationContext;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -22,8 +18,10 @@ public class User implements Serializable {
     private String password;
     @Column(name = "email", nullable = false)
     private String email;
+
     @OneToOne
     private Role role;
+
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
 
