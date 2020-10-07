@@ -24,9 +24,6 @@ public class Order implements Serializable {
     @Column(name = "recipient_last_name", nullable = false)
     private String lastName;
 
-    @ManyToOne
-    @JoinColumn(name = "id_user")
-    private User user;
 
     @OneToOne
     private ShoppingCart shoppingCart;
@@ -74,14 +71,6 @@ public class Order implements Serializable {
         this.postDate = postDate;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public ShoppingCart getShoppingCart() {
         return shoppingCart;
     }
@@ -124,8 +113,6 @@ public class Order implements Serializable {
                 ", address='" + address + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", user=" + user +
-                ", shoppingCart=" + shoppingCart +
                 '}';
     }
 }

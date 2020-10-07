@@ -12,8 +12,7 @@ public class ShoppingCart implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_shopping_cart")
     private Long id;
-    @OneToOne
-    private User user;
+
     @OneToMany
     private List<Product> productList;
 
@@ -27,13 +26,6 @@ public class ShoppingCart implements Serializable {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public List<Product> getProductList() {
         return productList;

@@ -2,14 +2,10 @@ package main.shop.Controller;
 
 import main.shop.Model.Product;
 import main.shop.Model.ShoppingCart;
-import main.shop.Repository.UserRepository;
 import main.shop.Service.ShoppingCartService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
@@ -19,11 +15,10 @@ import java.util.List;
 @RequestMapping("/shoppingCart")
 public class ShoppingCartController {
 
-    private ShoppingCartService shoppingCartService;
+    private final ShoppingCartService shoppingCartService;
     private List<Product> productList = new ArrayList<>();
 
-    @Autowired
-    public void setShoppingCartService(ShoppingCartService shoppingCartService) {
+    public ShoppingCartController(ShoppingCartService shoppingCartService) {
         this.shoppingCartService = shoppingCartService;
     }
 

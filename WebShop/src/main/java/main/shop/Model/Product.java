@@ -99,7 +99,6 @@ public class Product implements Serializable {
                 ", description='" + description + '\'' +
                 ", value=" + value +
                 ", availableCount=" + availableCount +
-                ", details=" + details +
                 '}';
     }
 }
