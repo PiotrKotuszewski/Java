@@ -1,1 +1,0 @@
-Prosty program przedstawiajacy roznice w konfiguracji polaczenia z baza danych miedzy spring-data a spring-data-boot.

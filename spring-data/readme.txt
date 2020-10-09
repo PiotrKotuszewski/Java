@@ -1,1 +1,0 @@
-Prosty program przedstawiajacy polaczenie z baza danych.
