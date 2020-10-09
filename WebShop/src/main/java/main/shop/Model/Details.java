@@ -11,13 +11,11 @@ public class Details implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_details")
     private Long id;
-    private String comment;
     private double rate;
 
     public Details(){}
 
-    public Details(String comment, double rate) {
-        this.comment = comment;
+    public Details(double rate) {
         this.rate = rate;
     }
 
@@ -29,13 +27,6 @@ public class Details implements Serializable {
         this.id = id;
     }
 
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
 
     public double getRate() {
         return rate;
@@ -49,7 +40,6 @@ public class Details implements Serializable {
     public String toString() {
         return "Details{" +
                 "id=" + id +
-                ", comment='" + comment + '\'' +
                 ", rate=" + rate +
                 '}';
     }

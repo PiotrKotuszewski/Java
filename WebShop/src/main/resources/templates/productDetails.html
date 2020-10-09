@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Products List</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/productDetails.css">
 </head>
 <body>
-
+    <div class="card">
+        <img th:src="'/images/'+*{product.imageSource}" th:alt="*{product.name}" width="200">
+        <h1 th:text="*{product.name}"></h1>
+        <p class="price" th:text="*{product.value + ' zl'}"></p>
+        <p th:text="*{product.description}"></p>
+        <p><a th:href="@{/product/add/(Id=${product.id})}">Dodaj do koszyka</a></p>
+    </div>
 </body>
 </html>

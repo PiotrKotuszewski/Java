@@ -18,21 +18,31 @@ public class Product implements Serializable {
     private String description;
     @Column(nullable = false)
     private float value;
-    @Column(name = "available_count", nullable = false)
-    private int availableCount;
+    @Column(name = "stock", nullable = false)
+    private int stock;
+    @Column(name = "image_source", nullable = false)
+    private String imageSource;
+    @Column(name = "product_type", nullable = false)
+    private String productType;
+
     @OneToOne
     private Details details;
 
-    @OneToMany(mappedBy = "product")
-    private List<ImageModel> imageModelList;
+    @ManyToOne
+    @JoinColumn(name = "shopping_cart_id")
+    private ShoppingCart shoppingCart;
 
     public Product(){}
 
-    public Product(String name, String description, float value, int availableCount) {
+    public Product(String name, String description, float value, int stock, Details details,
+                   String imageSource, String productType) {
         this.name = name;
         this.description = description;
         this.value = value;
-        this.availableCount = availableCount;
+        this.stock = stock;
+        this.details = details;
+        this.imageSource = imageSource;
+        this.productType = productType;
     }
 
     public Long getId() {
@@ -75,20 +85,36 @@ public class Product implements Serializable {
         this.value = value;
     }
 
-    public int getAvailableCount() {
-        return availableCount;
+    public int getStock() {
+        return stock;
     }
 
-    public void setAvailableCount(int availableCount) {
-        this.availableCount = availableCount;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
-    public List<ImageModel> getImageModelList() {
-        return imageModelList;
+    public String getImageSource() {
+        return imageSource;
     }
 
-    public void setImageModelList(List<ImageModel> imageModelList) {
-        this.imageModelList = imageModelList;
+    public void setImageSource(String imageSource) {
+        this.imageSource = imageSource;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
+    }
+
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
 
     @Override
@@ -98,7 +124,10 @@ public class Product implements Serializable {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", value=" + value +
-                ", availableCount=" + availableCount +
+                ", stock=" + stock +
+                ", details=" + details +
+                ", imageSource='" + imageSource + '\'' +
+                ", productType='" + productType + '\'' +
                 '}';
     }
 }

@@ -3,6 +3,7 @@ package main.shop.Model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "shopping_cart")
@@ -12,11 +13,18 @@ public class ShoppingCart implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_shopping_cart")
     private Long id;
+    @Column(name = "user_id", nullable = false)
+    private String userId;
 
     @OneToMany
-    private List<Product> productList;
+    private Set<Product> productList;
 
     public ShoppingCart(){}
+
+    public ShoppingCart(String userId, Set<Product> productList) {
+        this.userId = userId;
+        this.productList = productList;
+    }
 
     public Long getId() {
         return id;
@@ -26,14 +34,27 @@ public class ShoppingCart implements Serializable {
         this.id = id;
     }
 
+    public String getUserId() {
+        return userId;
+    }
 
-    public List<Product> getProductList() {
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public Set<Product> getProductList() {
         return productList;
     }
 
-    public void setProductList(List<Product> productList) {
+    public void setProductList(Set<Product> productList) {
         this.productList = productList;
     }
 
-
+    @Override
+    public String toString() {
+        return "ShoppingCart{" +
+                "id=" + id +
+                ", productList=" + productList +
+                '}';
+    }
 }

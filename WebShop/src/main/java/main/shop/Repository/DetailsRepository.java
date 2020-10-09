@@ -1,7 +1,7 @@
 package main.shop.Repository;
 
 import main.shop.Model.Details;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DetailsRepository extends CrudRepository<Details, Long> {
+public interface DetailsRepository extends JpaRepository<Details, Long> {
 }

@@ -6,7 +6,7 @@ import main.shop.Repository.ProductRepository;
 import main.shop.Repository.ShoppingCartRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Set;
 
 @Service
 public class ShoppingCartService {
@@ -19,9 +19,14 @@ public class ShoppingCartService {
         this.productRepository = productRepository;
     }
 
-    public void addShoppingCart(ShoppingCart shoppingCart, List<Product> products){
+    public void addShoppingCart(ShoppingCart shoppingCart, Set<Product> products){
         products.forEach(productRepository::save);
         shoppingCart.setProductList(products);
         shoppingCartRepository.save(shoppingCart);
     }
+
+    public ShoppingCart getOneById(String userId){
+        return shoppingCartRepository.getByUserId(userId);
+    }
+
 }

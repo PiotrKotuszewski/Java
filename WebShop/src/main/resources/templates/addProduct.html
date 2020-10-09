@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Dodaj produkt</title>
 </head>
 <body>
+    <h1>Dodaj produkt</h1>
+    <form action="#" th:action="@{/product/new}" th:object="${product}" method="post">
+        <input type="text" id="addName" placeholder="Wprowadz nazwe" th:field="*{name}"><br>
+        <input type="text" id="addPrize" placeholder="Wprowadz cene" th:field="*{value}"><br>
+        <input type="text" id="addStock" placeholder="Wprowadz ilosc" th:field="*{stock}"><br>
+        <input type="text" id="addDescription" placeholder="Wprowadz opis" th:field="*{description}"><br>
+        <input type="text" id="addType" placeholder="Wprowadz typ" th:field="*{productType}"><br>
+        <input type="file" id="addImage" placeholder="Wybierz zdjecie" th:field="*{imageSource}"><br>
 
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </body>
 </html>
